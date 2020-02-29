@@ -1,0 +1,409 @@
+#+OPTIONS: num:nil
+#+LATEX_HEADER: \usepackage{xeCJK}
+#+LATEX_HEADER: \usepackage{hyperref}
+#+LaTeX_HEADER: \pdfmapfile{/home/neilsen/texmf/fonts/map/dvips/libertine/libertine.map}
+#+LaTeX_HEADER: \usepackage[ttscale=.875]{libertine}
+#+LaTeX_HEADER: \usepackage{sectsty}
+#+LaTeX_HEADER: \sectionfont{\normalfont\scshape}
+#+LaTeX_HEADER: \subsectionfont{\normalfont\itshape}
+#+AUTHOR: whiothes
+
+* Unix Network Programming [0%]
+** TODO Part 1: Introduction and TCP/IP [0/2]
+*** TODO Chapter 1. Introduction [0/13]
+**** TODO 1.1 Introduction
+     #+caption: Figure 1.1 Network application: client and server
+     #+begin_src plantuml :file Chapter01/01fig01.jpg :cmdline charset utf-8
+       digraph G {
+               rankdir = LR;
+
+               client[shape="box"]
+               server[shape="box"]
+
+               client -> server[label="application protocol", dir="both"]
+       }
+     #+end_src
+
+     #+RESULTS:
+     [[file:Chapter01/01fig01.jpg]]
+
+**** TODO 1.2 A Simple Daytime Client
+**** TODO 1.3 Protocol Independence
+**** TODO 1.4 Error Handling: Wrapper Functions
+**** TODO 1.5 A Simple Daytime Server
+**** TODO 1.6 Roadmap to Client/Server Examples in the Text
+**** TODO 1.7 OSI Model
+**** TODO 1.8 BSD Networking History
+**** TODO 1.9 Test Networks and Hosts
+**** TODO 1.10 Unix Standards
+**** TODO 1.11 64-Bit Architectures
+**** TODO 1.12 Summary
+**** TODO Exercises
+*** TODO Chapter 2. The Transport Layer: TCP, UDP, and SCTP [0/15]
+**** TODO 2.1 Introduction
+**** TODO 2.2 The Big Picture
+**** TODO 2.3 User Datagram Protocol (UDP)
+**** TODO 2.4 Transmission Control Protocol (TCP)
+**** TODO 2.5 Stream Control Transmission Protocol (SCTP)
+**** TODO 2.6 TCP Connection Establishment and Termination
+**** TODO 2.7 TIME_WAIT State
+**** TODO 2.8 SCTP Association Establishment and Termination
+**** TODO 2.9 Port Numbers
+**** TODO 2.10 TCP Port Numbers and Concurrent Servers
+**** TODO 2.11 Buffer Sizes and Limitations
+**** TODO 2.12 Standard Internet Services
+**** TODO 2.13 Protocol Usage by Common Internet Applications
+**** TODO 2.14 Summary
+**** TODO Exercises
+** TODO Part 2: Elementary Sockets [0/9]
+*** TODO Chapter 3. Sockets Introduction [0/11]
+**** TODO 3.1 Introduction
+**** TODO 3.2 Socket Address Structures
+**** TODO 3.3 Value-Result Arguments
+**** TODO 3.4 Byte Ordering Functions
+**** TODO 3.5 Byte Manipulation Functions
+**** TODO 3.6 'inet_aton', 'inet_addr', and 'inet_ntoa' Functions
+**** TODO 3.7 'inet_pton' and 'inet_ntop' Functions
+**** TODO 3.8 'sock_ntop' and Related Functions
+**** TODO 3.9 'readn', 'writen', and 'readline' Functions
+**** TODO 3.10 Summary
+**** TODO Exercises
+*** TODO Chapter 4. Elementary TCP Sockets [0/12]
+**** TODO 4.1 Introduction
+**** TODO 4.2 'socket' Function
+**** TODO 4.3 'connect' Function
+**** TODO 4.4 'bind' Function
+**** TODO 4.5 'listen' Function
+**** TODO 4.6 'accept' Function
+**** TODO 4.7 'fork' and 'exec' Functions
+**** TODO 4.8 Concurrent Servers
+**** TODO 4.9 'close' Function
+**** TODO 4.10 'getsockname' and 'getpeername' Functions
+**** TODO 4.11 Summary
+**** TODO Exercises
+*** TODO Chapter 5. TCP Client/Server Example [0/20]
+**** TODO 5.1 Introduction
+**** TODO 5.2 TCP Echo Server: 'main' Function
+**** TODO 5.3 TCP Echo Server: 'str_echo' Function
+**** TODO 5.4 TCP Echo Client: 'main' Function
+**** TODO 5.5 TCP Echo Client: 'str_cli' Function
+**** TODO 5.6 Normal Startup
+**** TODO 5.7 Normal Termination
+**** TODO 5.8 POSIX Signal Handling
+**** TODO 5.9 Handling 'SIGCHLD' Signals
+**** TODO 5.10 'wait' and 'waitpid' Functions
+**** TODO 5.11 Connection Abort before 'accept' Returns
+**** TODO 5.12 Termination of Server Process
+**** TODO 5.13 'SIGPIPE' Signal
+**** TODO 5.14 Crashing of Server Host
+**** TODO 5.15 Crashing and Rebooting of Server Host
+**** TODO 5.16 Shutdown of Server Host
+**** TODO 5.17 Summary of TCP Example
+**** TODO 5.18 Data Format
+**** TODO 5.19 Summary
+**** TODO Exercises
+*** TODO Chapter 6. I/O Multiplexing: The 'select' and 'poll' Functions [0/13]
+**** TODO 6.1 Introduction
+**** TODO 6.2 I/O Models
+**** TODO 6.3 'select' Function
+**** TODO 6.4 'str_cli' Function (Revisited)
+**** TODO 6.5 Batch Input and Buffering
+**** TODO 6.6 'shutdown' Function
+**** TODO 6.7 'str_cli' Function (Revisited Again)
+**** TODO 6.8 TCP Echo Server (Revisited)
+**** TODO 6.9 'pselect' Function
+**** TODO 6.10 'poll' Function
+**** TODO 6.11 TCP Echo Server (Revisited Again)
+**** TODO 6.12 Summary
+**** TODO Exercises
+*** TODO Chapter 7. Socket Options [0/13]
+**** TODO 7.1 Introduction
+**** TODO 7.2 'getsockopt' and 'setsockopt' Functions
+**** TODO 7.3 Checking if an Option Is Supported and Obtaining the Default
+**** TODO 7.4 Socket States
+**** TODO 7.5 Generic Socket Options
+**** TODO 7.6 IPv4 Socket Options
+**** TODO 7.7 ICMPv6 Socket Option
+**** TODO 7.8 IPv6 Socket Options
+**** TODO 7.9 TCP Socket Options
+**** TODO 7.10 SCTP Socket Options
+**** TODO 7.11 'fcntl' Function
+**** TODO 7.12 Summary
+**** TODO Exercises
+*** TODO Chapter 8. Elementary UDP Sockets [0/17]
+**** TODO 8.1 Introduction
+**** TODO 8.2 'recvfrom' and 'sendto' Functions
+**** TODO 8.3 UDP Echo Server: 'main' Function
+**** TODO 8.4 UDP Echo Server: 'dg_echo' Function
+**** TODO 8.5 UDP Echo Client: 'main' Function
+**** TODO 8.6 UDP Echo Client: 'dg_cli' Function
+**** TODO 8.7 Lost Datagrams
+**** TODO 8.8 Verifying Received Response
+**** TODO 8.9 Server Not Running
+**** TODO 8.10 Summary of UDP Example
+**** TODO 8.11 'connect' Function with UDP
+**** TODO 8.12 'dg_cli' Function (Revisited)
+**** TODO 8.13 Lack of Flow Control with UDP
+**** TODO 8.14 Determining Outgoing Interface with UDP
+**** TODO 8.15 TCP and UDP Echo Server Using 'select'
+**** TODO 8.16 Summary
+**** TODO Exercises
+*** TODO Chapter 9. Elementary SCTP Sockets [0/16]
+**** TODO 9.1 Introduction
+**** TODO 9.2 Interface Models
+**** TODO 9.3 'sctp_bindx' Function
+**** TODO 9.4 'sctp_connectx' Function
+**** TODO 9.5 'sctp_getpaddrs' Function
+**** TODO 9.6 'sctp_freepaddrs' Function
+**** TODO 9.7 'sctp_getladdrs' Function
+**** TODO 9.8 'sctp_freeladdrs' Function
+**** TODO 9.9 'sctp_sendmsg' Function
+**** TODO 9.10 'sctp_recvmsg' Function
+**** TODO 9.11 'sctp_opt_info' Function
+**** TODO 9.12 'sctp_peeloff' Function
+**** TODO 9.13 'shutdown' Function
+**** TODO 9.14 Notifications
+**** TODO 9.15 Summary
+**** TODO Exercises
+*** TODO Chapter 10. SCTP Client/Server Example [0/9]
+**** TODO 10.1 Introduction
+**** TODO 10.2 SCTP One-to-Many-Style Streaming Echo Server: 'main' Function
+**** TODO 10.3 SCTP One-to-Many-Style Streaming Echo Client: 'main' Function
+**** TODO 10.4 SCTP Streaming Echo Client: 'str_cli' Function
+**** TODO 10.5 Exploring Head-of-Line Blocking
+**** TODO 10.6 Controlling the Number of Streams
+**** TODO 10.7 Controlling Termination
+**** TODO 10.8 Summary
+**** TODO Exercises
+*** TODO Chapter 11. Name and Address Conversions [0/23]
+**** TODO 11.1 Introduction
+**** TODO 11.2 Domain Name System (DNS)
+**** TODO 11.3 'gethostbyname' Function
+**** TODO 11.4 'gethostbyaddr' Function
+**** TODO 11.5 'getservbyname' and 'getservbyport' Functions
+**** TODO 11.6 'getaddrinfo' Function
+**** TODO 11.7 'gai_strerror' Function
+**** TODO 11.8 'freeaddrinfo' Function
+**** TODO 11.9 'getaddrinfo' Function: IPv6
+**** TODO 11.10 'getaddrinfo' Function: Examples
+**** TODO 11.11 'host_serv' Function
+**** TODO 11.12 'tcp_connect' Function
+**** TODO 11.13 'tcp_listen' Function
+**** TODO 11.14 'udp_client' Function
+**** TODO 11.15 'udp_connect' Function
+**** TODO 11.16 'udp_server' Function
+**** TODO 11.17 'getnameinfo' Function
+**** TODO 11.18 Re-entrant Functions
+**** TODO 11.19 'gethostbyname_r' and 'gethostbyaddr_r' Functions
+**** TODO 11.20 Obsolete IPv6 Address Lookup Functions
+**** TODO 11.21 Other Networking Information
+**** TODO 11.22 Summary
+**** TODO Exercises
+** TODO Part 3: Advanced Sockets [0/20]
+*** TODO Chapter 12. IPv4 and IPv6 Interoperability [0/7]
+**** TODO 12.1 Introduction
+**** TODO 12.2 IPv4 Client, IPv6 Server
+**** TODO 12.3 IPv6 Client, IPv4 Server
+**** TODO 12.4 IPv6 Address-Testing Macros
+**** TODO 12.5 Source Code Portability
+**** TODO 12.6 Summary
+**** TODO Exercises
+*** TODO Chapter 13. Daemon Processes and the 'inetd' Superserver [0/8]
+**** TODO 13.1 Introduction
+**** TODO 13.2 'syslogd' Daemon
+**** TODO 13.3 'syslog' Function
+**** TODO 13.4 'daemon_init' Function
+**** TODO 13.5 'inetd' Daemon
+**** TODO 13.6 'daemon_inetd' Function
+**** TODO 13.7 Summary
+**** TODO Exercises
+*** TODO Chapter 14. Advanced I/O Functions [0/11]
+**** TODO 14.1 Introduction
+**** TODO 14.2 Socket Timeouts
+**** TODO 14.3 'recv' and 'send' Functions
+**** TODO 14.4 'readv' and 'writev' Functions
+**** TODO 14.5 'recvmsg' and 'sendmsg' Functions
+**** TODO 14.6 Ancillary Data
+**** TODO 14.7 How Much Data Is Queued?
+**** TODO 14.8 Sockets and Standard I/O
+**** TODO 14.9 Advanced Polling
+**** TODO 14.10 Summary
+**** TODO Exercises
+*** TODO Chapter 15. Unix Domain Protocols [0/10]
+**** TODO 15.1 Introduction
+**** TODO 15.2 Unix Domain Socket Address Structure
+**** TODO 15.3 'socketpair' Function
+**** TODO 15.4 Socket Functions
+**** TODO 15.5 Unix Domain Stream Client/Server
+**** TODO 15.6 Unix Domain Datagram Client/Server
+**** TODO 15.7 Passing Descriptors
+**** TODO 15.8 Receiving Sender Credentials
+**** TODO 15.9 Summary
+**** TODO Exercises
+*** TODO Chapter 16. Nonblocking I/O [0/8]
+**** TODO 16.1 Introduction
+**** TODO 16.2 Nonblocking Reads and Writes: 'str_cli' Function (Revisited)
+**** TODO 16.3 Nonblocking 'connect'
+**** TODO 16.4 Nonblocking 'connect:' Daytime Client
+**** TODO 16.5 Nonblocking 'connect:' Web Client
+**** TODO 16.6 Nonblocking 'accept'
+**** TODO 16.7 Summary
+**** TODO Exercises
+*** TODO Chapter 17. 'ioctl' Operations [0/11]
+**** TODO 17.1 Introduction
+**** TODO 17.2 'ioctl' Function
+**** TODO 17.3 Socket Operations
+**** TODO 17.4 File Operations
+**** TODO 17.5 Interface Configuration
+**** TODO 17.6 'get_ifi_info' Function
+**** TODO 17.7 Interface Operations
+**** TODO 17.8 ARP Cache Operations
+**** TODO 17.9 Routing Table Operations
+**** TODO 17.10 Summary
+**** TODO Exercises
+*** TODO Chapter 18. Routing Sockets [0/8]
+**** TODO 18.1 Introduction
+**** TODO 18.2 Datalink Socket Address Structure
+**** TODO 18.3 Reading and Writing
+**** TODO 18.4 'sysctl' Operations
+**** TODO 18.5 'get_ifi_info' Function (Revisited)
+**** TODO 18.6 Interface Name and Index Functions
+**** TODO 18.7 Summary
+**** TODO Exercises
+*** TODO Chapter 19. Key Management Sockets [0/7]
+**** TODO 19.1 Introduction
+**** TODO 19.2 Reading and Writing
+**** TODO 19.3 Dumping the Security Association Database (SADB)
+**** TODO 19.4 Creating a Static Security Association (SA)
+**** TODO 19.5 Dynamically Maintaining SAs
+**** TODO 19.6 Summary
+**** TODO Exercises
+*** TODO Chapter 20. Broadcasting [0/7]
+**** TODO 20.1 Introduction
+**** TODO 20.2 Broadcast Addresses
+**** TODO 20.3 Unicast versus Broadcast
+**** TODO 20.4 'dg_cli' Function Using Broadcasting
+**** TODO 20.5 Race Conditions
+**** TODO 20.6 Summary
+**** TODO Exercises
+*** TODO Chapter 21. Multicasting [0/13]
+**** TODO 21.1 Introduction
+**** TODO 21.2 Multicast Addresses
+**** TODO 21.3 Multicasting versus Broadcasting on a LAN
+**** TODO 21.4 Multicasting on a WAN
+**** TODO 21.5 Source-Specific Multicast
+**** TODO 21.6 Multicast Socket Options
+**** TODO 21.7 'mcast_join' and Related Functions
+**** TODO 21.8 'dg_cli' Function Using Multicasting
+**** TODO 21.9 Receiving IP Multicast Infrastructure Session Announcements
+**** TODO 21.10 Sending and Receiving
+**** TODO 21.11 Simple Network Time Protocol (SNTP)
+**** TODO 21.12 Summary
+**** TODO Exercises
+*** TODO Chapter 22. Advanced UDP Sockets [0/11]
+**** TODO 22.1 Introduction
+**** TODO 22.2 Receiving Flags, Destination IP Address, and Interface Index
+**** TODO 22.3 Datagram Truncation
+**** TODO 22.4 When to Use UDP Instead of TCP
+**** TODO 22.5 Adding Reliability to a UDP Application
+**** TODO 22.6 Binding Interface Addresses
+**** TODO 22.7 Concurrent UDP Servers
+**** TODO 22.8 IPv6 Packet Information
+**** TODO 22.9 IPv6 Path MTU Control
+**** TODO 22.10 Summary
+**** TODO Exercises
+*** TODO Chapter 23. Advanced SCTP Sockets [0/14]
+**** TODO 23.1 Introduction
+**** TODO 23.2 An Autoclosing One-to-Many-Style Server
+**** TODO 23.3 Partial Delivery [0/0]
+**** TODO 23.4 Notifications
+**** TODO 23.5 Unordered Data
+**** TODO 23.6 Binding a Subset of Addresses
+**** TODO 23.7 Determining Peer and Local Address Information
+**** TODO 23.8 Finding an Association ID Given an IP Address
+**** TODO 23.9 Heartbeating and Address Failure
+**** TODO 23.10 Peeling Off an Association
+**** TODO 23.11 Controlling Timing
+**** TODO 23.12 When to Use SCTP Instead of TCP
+**** TODO 23.13 Summary
+**** TODO Exercises
+*** TODO Chapter 24. Out-of-Band Data [0/6]
+**** TODO 24.1 Introduction
+**** TODO 24.2 TCP Out-of-Band Data
+**** TODO 24.3 'sockatmark' Function
+**** TODO 24.4 TCP Out-of-Band Data Recap
+**** TODO 24.5 Summary
+**** TODO Exercises
+*** TODO Chapter 25. Signal-Driven I/O [0/5]
+**** TODO 25.1 Introduction
+**** TODO 25.2 Signal-Driven I/O for Sockets
+**** TODO 25.3 UDP Echo Server Using 'SIGIO'
+**** TODO 25.4 Summary
+**** TODO Exercises
+*** TODO Chapter 26. Threads [0/11]
+**** TODO 26.1 Introduction
+**** TODO 26.2 Basic Thread Functions: Creation and Termination
+**** TODO 26.3 'str_cli' Function Using Threads
+**** TODO 26.4 TCP Echo Server Using Threads
+**** TODO 26.5 Thread-Specific Data
+**** TODO 26.6 Web Client and Simultaneous Connections (Continued)
+**** TODO 26.7 Mutexes: Mutual Exclusion
+**** TODO 26.8 Condition Variables
+**** TODO 26.9 Web Client and Simultaneous Connections (Continued)
+**** TODO 26.10 Summary
+**** TODO Exercises
+*** TODO Chapter 27. IP Options [0/10]
+**** TODO 27.1 Introduction
+**** TODO 27.2 IPv4 Options
+**** TODO 27.3 IPv4 Source Route Options
+**** TODO 27.4 IPv6 Extension Headers
+**** TODO 27.5 IPv6 Hop-by-Hop Options and Destination Options
+**** TODO 27.6 IPv6 Routing Header
+**** TODO 27.7 IPv6 Sticky Options
+**** TODO 27.8 Historical IPv6 Advanced API
+**** TODO 27.9 Summary
+**** TODO Exercises
+*** TODO Chapter 28. Raw Sockets [0/9]
+**** TODO 28.1 Introduction
+**** TODO 28.2 Raw Socket Creation
+**** TODO 28.3 Raw Socket Output
+**** TODO 28.4 Raw Socket Input
+**** TODO 28.5 'ping' Program
+**** TODO 28.6 'traceroute' Program
+**** TODO 28.7 An ICMP Message Daemon
+**** TODO 28.8 Summary
+**** TODO Exercises
+*** TODO Chapter 29. Datalink Access [0/9]
+**** TODO 29.1 Introduction
+**** TODO 29.2 BSD Packet Filter (BPF)
+**** TODO 29.3 Datalink Provider Interface (DLPI)
+**** TODO 29.4 Linux: 'SOCK_PACKET' and 'PF_PACKET'
+**** TODO 29.5 'libpcap': Packet Capture Library
+**** TODO 29.6 'libnet': Packet Creation and Injection Library
+**** TODO 29.7 Examining the UDP Checksum Field
+**** TODO 29.8 Summary
+**** TODO Exercises
+*** TODO Chapter 30. Client/Server Design Alternatives [0/14]
+**** TODO 30.1 Introduction
+**** TODO 30.2 TCP Client Alternatives
+**** TODO 30.3 TCP Test Client
+**** TODO 30.4 TCP Iterative Server
+**** TODO 30.5 TCP Concurrent Server, One Child per Client
+**** TODO 30.6 TCP Preforked Server, No Locking Around 'accept'
+**** TODO 30.7 TCP Preforked Server, File Locking Around 'accept'
+**** TODO 30.8 TCP Preforked Server, Thread Locking Around 'accept'
+**** TODO 30.9 TCP Preforked Server, Descriptor Passing
+**** TODO 30.10 TCP Concurrent Server, One Thread per Client
+**** TODO 30.11 TCP Prethreaded Server, per-Thread 'accept'
+**** TODO 30.12 TCP Prethreaded Server, Main Thread 'accept'
+**** TODO 30.13 Summary
+**** TODO Exercises
+*** TODO Chapter 31. Streams [0/8]
+**** TODO 31.1 Introduction
+**** TODO 31.2 Overview
+**** TODO 31.3 'getmsg' and 'putmsg' Functions
+**** TODO 31.4 'getpmsg' and 'putpmsg' Functions
+**** TODO 31.5 'ioctl' Function
+**** TODO 31.6 Transport Provider Interface (TPI)
+**** TODO 31.7 Summary
+**** TODO Exercises
